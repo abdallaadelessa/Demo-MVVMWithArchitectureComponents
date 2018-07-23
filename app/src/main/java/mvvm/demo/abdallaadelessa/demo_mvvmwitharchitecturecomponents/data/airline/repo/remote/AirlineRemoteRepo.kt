@@ -9,16 +9,11 @@ import mvvm.demo.abdallaadelessa.demo_mvvmwitharchitecturecomponents.data.common
 import retrofit2.Retrofit
 import retrofit2.http.GET
 
-class AirLineRemoteRepo (private val retrofit : Retrofit) {
-     fun listAirlines(): Observable<List<AirlineModel>> {
-       return retrofit.create(AirLineRetrofitService::class.java).listAirlines()
+class AirLineRemoteRepo (private val service : AirLineRetrofitService) {
+     fun listAirlines(): Single<List<AirlineModel>> {
+       return service.listAirlines()
                .subscribeOn(Schedulers.io())
                .observeOn(AndroidSchedulers.mainThread())
     }
 }
 
-interface  AirLineRetrofitService
-{
-    @GET("airlines")
-    fun listAirlines() : Observable<List<AirlineModel>>
-}

@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.util.Log
 import mvvm.demo.abdallaadelessa.demo_mvvmwitharchitecturecomponents.R
 import mvvm.demo.abdallaadelessa.demo_mvvmwitharchitecturecomponents.app.MyApplication
+import mvvm.demo.abdallaadelessa.demo_mvvmwitharchitecturecomponents.data.airline.repo.local.AirlineLocalRepo
 import mvvm.demo.abdallaadelessa.demo_mvvmwitharchitecturecomponents.domain.airline.AirlineUseCase
 import javax.inject.Inject
 
@@ -20,11 +21,11 @@ class MainActivity : AppCompatActivity() {
 
         airlineUseCase.listAirlines().subscribe({
             it?.let {
-                Log.d("Tag",it.toString())
+                Log.d("DebugTag",it.toString())
             }
         },{
             it?.let {
-            Log.d("Tag",it.toString())
+            Log.d("DebugTag",it.toString())
         }})
     }
 }
