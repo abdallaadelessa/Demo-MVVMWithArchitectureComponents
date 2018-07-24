@@ -21,10 +21,10 @@ class ListAirlinesActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         MyApplication.appComponent.inject(this)
         viewModel = ViewModelProviders.of(this,viewModelFactory).get(ListAirlineViewModel::class.java)
-        ObserveViewModel()
+        observeViewModel()
     }
 
-    private fun ObserveViewModel() {
+    private fun observeViewModel() {
         viewModel!!.getAirLines().observe(this, Observer {
             Log.d("DebugTag", it.toString())
         })

@@ -1,4 +1,4 @@
-package mvvm.demo.abdallaadelessa.demo_mvvmwitharchitecturecomponents.presentation.common
+package mvvm.demo.abdallaadelessa.demo_mvvmwitharchitecturecomponents.presentation.di
 
 import android.arch.lifecycle.ViewModel
 import android.arch.lifecycle.ViewModelProvider
