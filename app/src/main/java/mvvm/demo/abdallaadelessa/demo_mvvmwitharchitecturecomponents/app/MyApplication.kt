@@ -6,6 +6,7 @@ import mvvm.demo.abdallaadelessa.demo_mvvmwitharchitecturecomponents.app.di.comp
 import mvvm.demo.abdallaadelessa.demo_mvvmwitharchitecturecomponents.app.di.modules.AppModule
 import mvvm.demo.abdallaadelessa.demo_mvvmwitharchitecturecomponents.app.di.modules.NetModule
 import mvvm.demo.abdallaadelessa.demo_mvvmwitharchitecturecomponents.app.di.components.AirlineUsecaseComponent
+import mvvm.demo.abdallaadelessa.demo_mvvmwitharchitecturecomponents.app.di.components.DaggerAppComponent
 
 class MyApplication : Application() {
     override fun onCreate() {
