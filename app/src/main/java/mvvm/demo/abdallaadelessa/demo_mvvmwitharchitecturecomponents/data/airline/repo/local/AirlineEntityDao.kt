@@ -45,31 +45,3 @@ interface AirlineEntityDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insertAll(airlineEntities: List<AirlineEntity>)
 }
-
-@Database(entities = [(AirlineEntity::class)], version = 1, exportSchema = false)
-abstract class AppDatabase : RoomDatabase() {
-    abstract fun airlineEntityDao(): AirlineEntityDao
-    companion object {
-        /**
-         * The only instance
-         */
-        private var sInstance: AppDatabase? = null
-
-        /**
-         * Gets the singleton instance of SampleDatabase.
-         *
-         * @param context The context.
-         * @return The singleton instance of SampleDatabase.
-         */
-        @Synchronized
-        fun getInstance(context: Context): AppDatabase {
-            if (sInstance == null) {
-                sInstance = Room
-                        .databaseBuilder(context.applicationContext, AppDatabase::class.java, "AppDatabase")
-                        .fallbackToDestructiveMigration()
-                        .build()
-            }
-            return sInstance!!
-        }
-    }
-}

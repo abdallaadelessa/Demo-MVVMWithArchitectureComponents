@@ -9,7 +9,7 @@ import mvvm.demo.abdallaadelessa.demo_mvvmwitharchitecturecomponents.data.common
 import retrofit2.Retrofit
 import retrofit2.http.GET
 
-class AirLineRemoteRepo (private val service : AirLineRetrofitService) {
+class AirlineRemoteRepo (private val service : AirLineRetrofitService) {
      fun listAirlines(): Single<List<AirlineModel>> {
        return service.listAirlines()
                .subscribeOn(Schedulers.io())

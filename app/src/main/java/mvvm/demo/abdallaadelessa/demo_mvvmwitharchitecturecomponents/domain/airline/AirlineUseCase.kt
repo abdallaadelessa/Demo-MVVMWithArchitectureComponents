@@ -1,15 +1,13 @@
 package mvvm.demo.abdallaadelessa.demo_mvvmwitharchitecturecomponents.domain.airline
 
 import io.reactivex.Observable
-import io.reactivex.Single
-import io.reactivex.functions.Function
 import mvvm.demo.abdallaadelessa.demo_mvvmwitharchitecturecomponents.data.airline.model.AirlineModel
 import mvvm.demo.abdallaadelessa.demo_mvvmwitharchitecturecomponents.data.airline.repo.local.AirlineLocalRepo
-import mvvm.demo.abdallaadelessa.demo_mvvmwitharchitecturecomponents.data.airline.repo.remote.AirLineRemoteRepo
+import mvvm.demo.abdallaadelessa.demo_mvvmwitharchitecturecomponents.data.airline.repo.remote.AirlineRemoteRepo
 import mvvm.demo.abdallaadelessa.demo_mvvmwitharchitecturecomponents.domain.model.DataResult
 import java.util.concurrent.TimeUnit
 
-class AirlineUseCase (private val remoteRepo : AirLineRemoteRepo,private val localRepo : AirlineLocalRepo) {
+class AirlineUseCase (private val remoteRepo : AirlineRemoteRepo, private val localRepo : AirlineLocalRepo) {
 
     fun listAirlines() : Observable<DataResult<List<AirlineModel>>> {
 

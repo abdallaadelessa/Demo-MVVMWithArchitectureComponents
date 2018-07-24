@@ -2,7 +2,8 @@ package mvvm.demo.abdallaadelessa.demo_mvvmwitharchitecturecomponents.app
 
 import android.app.Application
 import mvvm.demo.abdallaadelessa.demo_mvvmwitharchitecturecomponents.app.di.*
-import mvvm.demo.abdallaadelessa.demo_mvvmwitharchitecturecomponents.data.airline.di.AirlineDataModule
+import mvvm.demo.abdallaadelessa.demo_mvvmwitharchitecturecomponents.data.airline.di.AirlineLocalDataModule
+import mvvm.demo.abdallaadelessa.demo_mvvmwitharchitecturecomponents.data.airline.di.AirlineRemoteDataModule
 import mvvm.demo.abdallaadelessa.demo_mvvmwitharchitecturecomponents.domain.di.AirlineUseCaseModule
 import mvvm.demo.abdallaadelessa.demo_mvvmwitharchitecturecomponents.presentation.AirlineUsecaseComponent
 
@@ -23,10 +24,7 @@ class MyApplication : Application() {
                 .netModule(NetModule("https://www.kayak.com/h/mobileapis/directory/"))
                 .build()
 
-        airlineUsecaseComponent = appComponent.AirlineUsecaseBuilder()
-                .airlineDataModule(AirlineDataModule())
-                .airlineUseCaseModule(AirlineUseCaseModule())
-                .build()
+        airlineUsecaseComponent = appComponent.AirlineUsecaseBuilder().build()
     }
 
     fun getAppComponent() : AppComponent = appComponent
