@@ -6,8 +6,8 @@ import mvvm.demo.abdallaadelessa.demo_mvvmwitharchitecturecomponents.data.airlin
 import mvvm.demo.abdallaadelessa.demo_mvvmwitharchitecturecomponents.data.airline.datasource.remote.AirlineRemoteDataSource
 import mvvm.demo.abdallaadelessa.demo_mvvmwitharchitecturecomponents.data.airline.repository.AirlineRepository
 import mvvm.demo.abdallaadelessa.demo_mvvmwitharchitecturecomponents.data.airline.repository.AirlineRepositoryImpl
-import mvvm.demo.abdallaadelessa.demo_mvvmwitharchitecturecomponents.domain.airline.AirlineUseCase
-import mvvm.demo.abdallaadelessa.demo_mvvmwitharchitecturecomponents.domain.airline.AirlineUseCaseImpl
+import mvvm.demo.abdallaadelessa.demo_mvvmwitharchitecturecomponents.domain.airline.useCase.AirlineUseCase
+import mvvm.demo.abdallaadelessa.demo_mvvmwitharchitecturecomponents.domain.airline.useCase.AirlineUseCaseImpl
 
 
 @Module
@@ -18,5 +18,5 @@ class AirlineUseCaseModule{
 
     @AirlineScope
     @Provides
-    fun providesAirlineUseCase(repo : AirlineRepository):AirlineUseCase = AirlineUseCaseImpl(repo)
+    fun providesAirlineUseCase(repo : AirlineRepository): AirlineUseCase = AirlineUseCaseImpl(repo)
 }

@@ -2,7 +2,7 @@ package mvvm.demo.abdallaadelessa.demo_mvvmwitharchitecturecomponents.presentati
 
 import android.arch.lifecycle.ViewModel
 import mvvm.demo.abdallaadelessa.demo_mvvmwitharchitecturecomponents.data.airline.model.AirlineModel
-import mvvm.demo.abdallaadelessa.demo_mvvmwitharchitecturecomponents.domain.airline.AirlineUseCase
+import mvvm.demo.abdallaadelessa.demo_mvvmwitharchitecturecomponents.domain.airline.useCase.AirlineUseCase
 import android.arch.lifecycle.MutableLiveData
 import io.reactivex.disposables.CompositeDisposable
 import mvvm.demo.abdallaadelessa.demo_mvvmwitharchitecturecomponents.domain.common.model.DataResult
