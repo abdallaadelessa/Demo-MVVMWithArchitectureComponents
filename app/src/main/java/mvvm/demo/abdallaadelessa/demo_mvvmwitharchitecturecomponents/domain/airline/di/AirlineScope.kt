@@ -1,4 +1,4 @@
-package mvvm.demo.abdallaadelessa.demo_mvvmwitharchitecturecomponents.app.di.scopes
+package mvvm.demo.abdallaadelessa.demo_mvvmwitharchitecturecomponents.domain.airline.di
 
 import javax.inject.Scope
 

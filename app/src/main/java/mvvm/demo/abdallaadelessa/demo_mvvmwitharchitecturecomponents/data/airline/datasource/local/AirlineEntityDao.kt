@@ -1,8 +1,7 @@
-package mvvm.demo.abdallaadelessa.demo_mvvmwitharchitecturecomponents.data.airline.repo.local
+package mvvm.demo.abdallaadelessa.demo_mvvmwitharchitecturecomponents.data.airline.datasource.local
 
 import android.arch.persistence.room.*
 import io.reactivex.Single
-import mvvm.demo.abdallaadelessa.demo_mvvmwitharchitecturecomponents.data.model.AirlineEntity
 
 
 @Dao

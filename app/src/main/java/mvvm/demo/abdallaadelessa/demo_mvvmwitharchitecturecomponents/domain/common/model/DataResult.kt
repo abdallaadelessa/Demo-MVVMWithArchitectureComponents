@@ -1,4 +1,4 @@
-package mvvm.demo.abdallaadelessa.demo_mvvmwitharchitecturecomponents.domain.model
+package mvvm.demo.abdallaadelessa.demo_mvvmwitharchitecturecomponents.domain.common.model
 
 sealed class DataResult<E>{
     sealed class Success<E> (val result : E) : DataResult<E>() {

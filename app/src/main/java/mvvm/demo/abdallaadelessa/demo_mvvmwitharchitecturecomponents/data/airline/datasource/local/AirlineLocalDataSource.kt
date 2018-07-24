@@ -1,16 +1,15 @@
-package mvvm.demo.abdallaadelessa.demo_mvvmwitharchitecturecomponents.data.airline.repo.local
+package mvvm.demo.abdallaadelessa.demo_mvvmwitharchitecturecomponents.data.airline.datasource.local
 
 import io.reactivex.Completable
 import io.reactivex.Observable
 import io.reactivex.Single
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
-import mvvm.demo.abdallaadelessa.demo_mvvmwitharchitecturecomponents.app.AppDatabase
-import mvvm.demo.abdallaadelessa.demo_mvvmwitharchitecturecomponents.data.model.AirlineEntity
-import mvvm.demo.abdallaadelessa.demo_mvvmwitharchitecturecomponents.data.model.AirlineModel
+import mvvm.demo.abdallaadelessa.demo_mvvmwitharchitecturecomponents.app.database.AppDatabase
+import mvvm.demo.abdallaadelessa.demo_mvvmwitharchitecturecomponents.data.airline.model.AirlineModel
 import javax.inject.Inject
 
-class AirlineLocalRepo @Inject constructor(db: AppDatabase) {
+class AirlineLocalDataSource @Inject constructor(db: AppDatabase) {
 
     val  airlineEntityDao:AirlineEntityDao = db.airlineEntityDao()
 

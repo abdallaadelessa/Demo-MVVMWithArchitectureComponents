@@ -1,11 +1,11 @@
-package mvvm.demo.abdallaadelessa.demo_mvvmwitharchitecturecomponents.app
+package mvvm.demo.abdallaadelessa.demo_mvvmwitharchitecturecomponents.app.database
 
 import android.arch.persistence.room.Database
 import android.arch.persistence.room.Room
 import android.arch.persistence.room.RoomDatabase
 import android.content.Context
-import mvvm.demo.abdallaadelessa.demo_mvvmwitharchitecturecomponents.data.model.AirlineEntity
-import mvvm.demo.abdallaadelessa.demo_mvvmwitharchitecturecomponents.data.airline.repo.local.AirlineEntityDao
+import mvvm.demo.abdallaadelessa.demo_mvvmwitharchitecturecomponents.data.airline.datasource.local.AirlineEntity
+import mvvm.demo.abdallaadelessa.demo_mvvmwitharchitecturecomponents.data.airline.datasource.local.AirlineEntityDao
 
 @Database(entities = [(AirlineEntity::class)], version = 1, exportSchema = false)
 abstract class AppDatabase : RoomDatabase() {

@@ -1,13 +1,13 @@
-package mvvm.demo.abdallaadelessa.demo_mvvmwitharchitecturecomponents.data.airline.repo.remote
+package mvvm.demo.abdallaadelessa.demo_mvvmwitharchitecturecomponents.data.airline.datasource.remote
 
 import io.reactivex.Single
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
-import mvvm.demo.abdallaadelessa.demo_mvvmwitharchitecturecomponents.data.model.AirlineModel
+import mvvm.demo.abdallaadelessa.demo_mvvmwitharchitecturecomponents.data.airline.model.AirlineModel
 import retrofit2.Retrofit
 import javax.inject.Inject
 
-class AirlineRemoteRepo @Inject constructor(retrofit: Retrofit) {
+class AirlineRemoteDataSource @Inject constructor(retrofit: Retrofit) {
 
     val airlineRetrofitService : AirlineRetrofitService = retrofit.create(AirlineRetrofitService::class.java)
 

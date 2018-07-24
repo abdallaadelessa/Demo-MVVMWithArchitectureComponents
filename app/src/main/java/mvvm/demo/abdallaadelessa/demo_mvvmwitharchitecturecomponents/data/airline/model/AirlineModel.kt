@@ -1,4 +1,4 @@
-package mvvm.demo.abdallaadelessa.demo_mvvmwitharchitecturecomponents.data.model
+package mvvm.demo.abdallaadelessa.demo_mvvmwitharchitecturecomponents.data.airline.model
 
 data class AirlineModel(val site : String?,
                         val defaultName : String?,
