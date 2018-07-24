@@ -8,31 +8,22 @@ import mvvm.demo.abdallaadelessa.demo_mvvmwitharchitecturecomponents.domain.di.A
 import mvvm.demo.abdallaadelessa.demo_mvvmwitharchitecturecomponents.presentation.AirlineUsecaseComponent
 
 class MyApplication : Application() {
-    private lateinit var appComponent: AppComponent private set
-    private lateinit var airlineUsecaseComponent: AirlineUsecaseComponent private set
-
     override fun onCreate() {
         super.onCreate()
         setup()
     }
 
     private fun setup() {
-        Instance = this
-
         appComponent = DaggerAppComponent.builder()
-                .appModule(AppModule(Instance))
+                .appModule(AppModule(this))
                 .netModule(NetModule("https://www.kayak.com/h/mobileapis/directory/"))
                 .build()
 
         airlineUsecaseComponent = appComponent.AirlineUsecaseBuilder().build()
     }
 
-    fun getAppComponent() : AppComponent = appComponent
-
-    fun getAirlineUsecaseComponent() : AirlineUsecaseComponent = airlineUsecaseComponent
-
     companion object {
-        lateinit var Instance: MyApplication
-           private set
+         lateinit var appComponent: AppComponent private set
+         lateinit var airlineUsecaseComponent: AirlineUsecaseComponent private set
     }
 }

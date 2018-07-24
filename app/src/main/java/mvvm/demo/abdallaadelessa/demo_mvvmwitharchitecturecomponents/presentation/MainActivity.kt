@@ -17,7 +17,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        MyApplication.Instance.getAirlineUsecaseComponent().inject(this)
+        MyApplication.airlineUsecaseComponent.inject(this)
 
         airlineUseCase.listAirlines().subscribe({
             it?.let {
