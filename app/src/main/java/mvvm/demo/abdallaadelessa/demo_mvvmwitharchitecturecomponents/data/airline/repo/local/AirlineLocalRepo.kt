@@ -21,7 +21,7 @@ class AirlineLocalRepo(val airlineEntityDao:AirlineEntityDao) {
     }
 
      fun listAirlines():  Single<List<AirlineModel>> {
-       return airlineEntityDao.all.flattenAsFlowable { it }
+       return airlineEntityDao.all.flattenAsObservable { it }
                .map{AirlineModel(it.site,it.defaultName,it.logoURL,it.phone,it.usName,it.name,it.code)}
                .toList()
                .subscribeOn(Schedulers.io())
