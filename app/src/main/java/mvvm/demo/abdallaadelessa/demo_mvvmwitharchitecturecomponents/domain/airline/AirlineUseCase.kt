@@ -6,8 +6,9 @@ import mvvm.demo.abdallaadelessa.demo_mvvmwitharchitecturecomponents.data.airlin
 import mvvm.demo.abdallaadelessa.demo_mvvmwitharchitecturecomponents.data.airline.repo.remote.AirlineRemoteRepo
 import mvvm.demo.abdallaadelessa.demo_mvvmwitharchitecturecomponents.domain.model.DataResult
 import java.util.concurrent.TimeUnit
+import javax.inject.Inject
 
-class AirlineUseCase (private val remoteRepo : AirlineRemoteRepo, private val localRepo : AirlineLocalRepo) {
+class AirlineUseCase @Inject constructor(private val remoteRepo : AirlineRemoteRepo, private val localRepo : AirlineLocalRepo) {
 
     fun listAirlines() : Observable<DataResult<List<AirlineModel>>> {
 

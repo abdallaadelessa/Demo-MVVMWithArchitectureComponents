@@ -6,36 +6,7 @@ import io.reactivex.Flowable
 import io.reactivex.Observable
 import io.reactivex.Single
 
-@Entity(tableName = "AirlineEntity")
-public class AirlineEntity( site : String?,
-                            defaultName : String?,
-                            logoURL : String?,
-                            phone : String?,
-                            usName : String?,
-                            name : String?,
-                            code : String) {
-    @ColumnInfo(name = "site")
-    var site: String? = site
 
-    @ColumnInfo(name = "defaultName")
-    var defaultName: String? = defaultName
-
-    @ColumnInfo(name = "logoURL")
-    var logoURL: String? = logoURL
-
-    @ColumnInfo(name = "phone")
-    var phone: String? = phone
-
-    @ColumnInfo(name = "usName")
-    var usName: String? = usName
-
-    @ColumnInfo(name = "name")
-    var name: String? = name
-
-    @PrimaryKey
-    var code: String = code
-
-}
 
 @Dao
 interface AirlineEntityDao {

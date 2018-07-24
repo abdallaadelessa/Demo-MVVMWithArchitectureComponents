@@ -1,8 +1,5 @@
 package mvvm.demo.abdallaadelessa.demo_mvvmwitharchitecturecomponents.presentation
 
-import dagger.Component
-import mvvm.demo.abdallaadelessa.demo_mvvmwitharchitecturecomponents.domain.airline.AirlineUseCase
-import mvvm.demo.abdallaadelessa.demo_mvvmwitharchitecturecomponents.domain.di.AirlineUseCaseModule
 import javax.inject.Singleton
 import dagger.Subcomponent
 import mvvm.demo.abdallaadelessa.demo_mvvmwitharchitecturecomponents.app.di.scopes.AirlineScope
@@ -13,14 +10,13 @@ import javax.inject.Scope
 
 
 @AirlineScope
-@Subcomponent(modules = arrayOf(AirlineUseCaseModule::class))
+@Subcomponent(modules = arrayOf(AirlineLocalDataModule::class,AirlineRemoteDataModule::class))
 interface AirlineUsecaseComponent {
 
     fun inject(mainActivity: MainActivity)
 
     @Subcomponent.Builder
      interface Builder {
-        fun airlineUseCaseModule(module: AirlineUseCaseModule): Builder
         fun airlineLocalDataModule(module: AirlineLocalDataModule): Builder
         fun airlineRemoteDataModule(module: AirlineRemoteDataModule): Builder
         fun build(): AirlineUsecaseComponent

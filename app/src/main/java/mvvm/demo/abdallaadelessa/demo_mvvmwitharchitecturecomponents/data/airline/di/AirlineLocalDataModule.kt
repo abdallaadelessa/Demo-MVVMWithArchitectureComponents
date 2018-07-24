@@ -6,20 +6,14 @@ import mvvm.demo.abdallaadelessa.demo_mvvmwitharchitecturecomponents.app.AppData
 import mvvm.demo.abdallaadelessa.demo_mvvmwitharchitecturecomponents.app.di.scopes.AirlineScope
 import mvvm.demo.abdallaadelessa.demo_mvvmwitharchitecturecomponents.data.airline.repo.local.AirlineEntityDao
 import mvvm.demo.abdallaadelessa.demo_mvvmwitharchitecturecomponents.data.airline.repo.local.AirlineLocalRepo
+import mvvm.demo.abdallaadelessa.demo_mvvmwitharchitecturecomponents.data.airline.repo.remote.AirlineRemoteRepo
+import mvvm.demo.abdallaadelessa.demo_mvvmwitharchitecturecomponents.domain.airline.AirlineUseCase
 
 @Module
 class AirlineLocalDataModule() {
-
     @AirlineScope
     @Provides
-    fun providesAirlineEntityDao(db: AppDatabase): AirlineEntityDao {
-        return db.airlineEntityDao()
+    fun providesAirlineLocalRepo(db: AppDatabase): AirlineLocalRepo {
+        return AirlineLocalRepo(db.airlineEntityDao())
     }
-
-    @AirlineScope
-    @Provides
-    fun providesAirlineLocalRepo(airlineEntityDao: AirlineEntityDao): AirlineLocalRepo {
-        return AirlineLocalRepo(airlineEntityDao)
-    }
-
 }
