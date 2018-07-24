@@ -11,13 +11,10 @@ import mvvm.demo.abdallaadelessa.demo_mvvmwitharchitecturecomponents.app.applica
 import javax.inject.Inject
 
 
-class ListAirlineViewModel : ViewModel() {
-
+class ListAirlineViewModel @Inject constructor(val airlineUseCase: AirlineUseCase): ViewModel() {
     private val disposables = CompositeDisposable()
-    @Inject lateinit var airlineUseCase: AirlineUseCase
 
     init {
-        MyApplication.appComponent.AirlineUseCaseBuilder().build().inject(this)
         loadAirlines()
     }
 

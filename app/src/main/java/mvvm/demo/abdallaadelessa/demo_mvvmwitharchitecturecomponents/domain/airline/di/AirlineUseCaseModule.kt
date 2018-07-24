@@ -8,15 +8,15 @@ import mvvm.demo.abdallaadelessa.demo_mvvmwitharchitecturecomponents.data.airlin
 import mvvm.demo.abdallaadelessa.demo_mvvmwitharchitecturecomponents.data.airline.repository.AirlineRepositoryImpl
 import mvvm.demo.abdallaadelessa.demo_mvvmwitharchitecturecomponents.domain.airline.useCase.AirlineUseCase
 import mvvm.demo.abdallaadelessa.demo_mvvmwitharchitecturecomponents.domain.airline.useCase.AirlineUseCaseImpl
+import javax.inject.Singleton
 
 
 @Module
 class AirlineUseCaseModule{
-    @AirlineScope
+    @Singleton
     @Provides
     fun providesAirlineRepo(localDataSource : AirlineLocalDataSource, remoteDataSource : AirlineRemoteDataSource):AirlineRepository = AirlineRepositoryImpl(localDataSource,remoteDataSource)
-
-    @AirlineScope
+    @Singleton
     @Provides
     fun providesAirlineUseCase(repo : AirlineRepository): AirlineUseCase = AirlineUseCaseImpl(repo)
 }
