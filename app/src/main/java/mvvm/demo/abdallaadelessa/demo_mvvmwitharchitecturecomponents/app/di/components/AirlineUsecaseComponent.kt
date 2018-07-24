@@ -1,6 +1,7 @@
-package mvvm.demo.abdallaadelessa.demo_mvvmwitharchitecturecomponents.presentation
+package mvvm.demo.abdallaadelessa.demo_mvvmwitharchitecturecomponents.app.di.components
 
 import dagger.Subcomponent
+import mvvm.demo.abdallaadelessa.demo_mvvmwitharchitecturecomponents.presentation.MainActivity
 import javax.inject.Scope
 
 @Scope

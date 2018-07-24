@@ -1,4 +1,4 @@
-package mvvm.demo.abdallaadelessa.demo_mvvmwitharchitecturecomponents.app.di
+package mvvm.demo.abdallaadelessa.demo_mvvmwitharchitecturecomponents.app.di.modules
 
 import com.google.gson.Gson
 import dagger.Module

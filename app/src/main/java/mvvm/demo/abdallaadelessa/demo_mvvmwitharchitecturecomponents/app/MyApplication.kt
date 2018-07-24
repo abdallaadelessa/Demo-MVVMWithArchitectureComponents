@@ -2,7 +2,10 @@ package mvvm.demo.abdallaadelessa.demo_mvvmwitharchitecturecomponents.app
 
 import android.app.Application
 import mvvm.demo.abdallaadelessa.demo_mvvmwitharchitecturecomponents.app.di.*
-import mvvm.demo.abdallaadelessa.demo_mvvmwitharchitecturecomponents.presentation.AirlineUsecaseComponent
+import mvvm.demo.abdallaadelessa.demo_mvvmwitharchitecturecomponents.app.di.components.AppComponent
+import mvvm.demo.abdallaadelessa.demo_mvvmwitharchitecturecomponents.app.di.modules.AppModule
+import mvvm.demo.abdallaadelessa.demo_mvvmwitharchitecturecomponents.app.di.modules.NetModule
+import mvvm.demo.abdallaadelessa.demo_mvvmwitharchitecturecomponents.app.di.components.AirlineUsecaseComponent
 
 class MyApplication : Application() {
     override fun onCreate() {
