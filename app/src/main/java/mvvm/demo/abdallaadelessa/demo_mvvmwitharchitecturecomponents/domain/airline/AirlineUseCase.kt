@@ -1,7 +1,7 @@
 package mvvm.demo.abdallaadelessa.demo_mvvmwitharchitecturecomponents.domain.airline
 
 import io.reactivex.Observable
-import mvvm.demo.abdallaadelessa.demo_mvvmwitharchitecturecomponents.data.airline.model.AirlineModel
+import mvvm.demo.abdallaadelessa.demo_mvvmwitharchitecturecomponents.data.model.AirlineModel
 import mvvm.demo.abdallaadelessa.demo_mvvmwitharchitecturecomponents.data.airline.repo.local.AirlineLocalRepo
 import mvvm.demo.abdallaadelessa.demo_mvvmwitharchitecturecomponents.data.airline.repo.remote.AirlineRemoteRepo
 import mvvm.demo.abdallaadelessa.demo_mvvmwitharchitecturecomponents.domain.model.DataResult

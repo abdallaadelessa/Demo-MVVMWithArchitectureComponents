@@ -1,4 +1,4 @@
-package mvvm.demo.abdallaadelessa.demo_mvvmwitharchitecturecomponents.data.airline.repo.local
+package mvvm.demo.abdallaadelessa.demo_mvvmwitharchitecturecomponents.data.model
 
 import android.arch.persistence.room.ColumnInfo
 import android.arch.persistence.room.Entity

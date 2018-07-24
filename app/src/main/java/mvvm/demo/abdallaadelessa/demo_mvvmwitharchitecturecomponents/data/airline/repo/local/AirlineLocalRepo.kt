@@ -6,7 +6,8 @@ import io.reactivex.Single
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
 import mvvm.demo.abdallaadelessa.demo_mvvmwitharchitecturecomponents.app.AppDatabase
-import mvvm.demo.abdallaadelessa.demo_mvvmwitharchitecturecomponents.data.airline.model.AirlineModel
+import mvvm.demo.abdallaadelessa.demo_mvvmwitharchitecturecomponents.data.model.AirlineEntity
+import mvvm.demo.abdallaadelessa.demo_mvvmwitharchitecturecomponents.data.model.AirlineModel
 import javax.inject.Inject
 
 class AirlineLocalRepo @Inject constructor(db: AppDatabase) {
@@ -15,7 +16,7 @@ class AirlineLocalRepo @Inject constructor(db: AppDatabase) {
 
     fun saveAirlines(airlines : List<AirlineModel>) : Completable{
         return Observable.fromIterable(airlines)
-                .map { AirlineEntity(it.site,it.defaultName,it.logoURL,it.phone,it.usName,it.name,it.code) }
+                .map { AirlineEntity(it.site, it.defaultName, it.logoURL, it.phone, it.usName, it.name, it.code) }
                 .toList()
                 .flatMapCompletable{ Completable.fromCallable{airlineEntityDao.insertAll(it)} }
                 .subscribeOn(Schedulers.io())

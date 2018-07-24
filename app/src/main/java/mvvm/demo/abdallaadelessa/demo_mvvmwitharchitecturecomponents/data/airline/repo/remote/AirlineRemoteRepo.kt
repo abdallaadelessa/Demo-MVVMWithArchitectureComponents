@@ -3,7 +3,7 @@ package mvvm.demo.abdallaadelessa.demo_mvvmwitharchitecturecomponents.data.airli
 import io.reactivex.Single
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
-import mvvm.demo.abdallaadelessa.demo_mvvmwitharchitecturecomponents.data.airline.model.AirlineModel
+import mvvm.demo.abdallaadelessa.demo_mvvmwitharchitecturecomponents.data.model.AirlineModel
 import retrofit2.Retrofit
 import javax.inject.Inject
 
