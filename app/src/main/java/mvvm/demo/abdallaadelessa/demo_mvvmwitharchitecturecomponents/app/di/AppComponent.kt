@@ -6,7 +6,6 @@ import dagger.android.AndroidInjectionModule
 import javax.inject.Singleton
 import dagger.BindsInstance
 import mvvm.demo.abdallaadelessa.demo_mvvmwitharchitecturecomponents.app.application.MyApplication
-import mvvm.demo.abdallaadelessa.demo_mvvmwitharchitecturecomponents.presentation.listairlines.ListAirlinesActivityModule
 
 
 @Singleton
@@ -15,8 +14,8 @@ import mvvm.demo.abdallaadelessa.demo_mvvmwitharchitecturecomponents.presentatio
     AppModule::class,
     NetModule::class,
     DatabaseModule::class,
-    ActivityBindingModule::class,
-    ViewModelFactoryBindingModule::class
+    ViewModelFactoryBindingModule::class,
+    FeaturesModule::class
 ])
 interface AppComponent
 {
