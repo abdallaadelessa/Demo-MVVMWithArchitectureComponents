@@ -1,4 +1,4 @@
-package mvvm.demo.abdallaadelessa.demo_mvvmwitharchitecturecomponents.presentation.extensions
+package mvvm.demo.abdallaadelessa.demo_mvvmwitharchitecturecomponents.presentation.common.extensions
 
 import android.arch.lifecycle.*
 import android.support.v4.app.FragmentActivity

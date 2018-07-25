@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Demo-MVVMWithArchitectureComponents</string>
+    <string name="placeholder_empty">Empty</string>
 </resources>

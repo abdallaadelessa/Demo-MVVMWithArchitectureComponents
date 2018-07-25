@@ -1,12 +1,12 @@
 package mvvm.demo.abdallaadelessa.demo_mvvmwitharchitecturecomponents.domain.common.model
 
-sealed class DataResult<E>{
-    sealed class Success<E> (val result : E) : DataResult<E>() {
-        class Network<E>(result : E): Success<E>(result)
-        class Local<E>(result : E): Success<E>(result)
+sealed class DataResult<E>(val source: DataSource) {
+    class Success<E>(source: DataSource, val result: E) : DataResult<E>(source) {
+        val isEmpty : Boolean
+        get(){ if(result is List<*>) return result.isEmpty() else return result == null }
     }
-    sealed class Error<E> (val throwable : Throwable): DataResult<E>(){
-        class Network<E>(throwable : Throwable): Error<E>(throwable)
-        class Local<E>(throwable : Throwable): Error<E>(throwable)
+
+    class Error<E>(source: DataSource, val throwable: Throwable) : DataResult<E>(source) {
     }
 }
+enum class DataSource { Network, Local }
