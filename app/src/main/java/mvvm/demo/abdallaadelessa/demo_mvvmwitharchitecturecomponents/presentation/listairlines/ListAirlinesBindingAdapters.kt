@@ -23,11 +23,9 @@ fun bindViewLoadingState(view: ProgressBar, viewState: ViewState<List<AirlineMod
 fun bindViewSuccessState(view: RecyclerView, viewState: ViewState<List<AirlineModel>>?) {
     val adapter = view.adapter
     if (viewState is ViewState.Success) {
-        if (adapter is ListAirlinesRvAdapter) {
-            adapter.submitList(viewState.data)
-            view.visibility = View.VISIBLE
-        } else {
-            view.visibility = View.GONE
-        }
+        if (adapter is ListAirlinesRvAdapter) adapter.submitList(viewState.data)
+        view.visibility = View.VISIBLE
+    }else {
+        view.visibility = View.GONE
     }
 }
