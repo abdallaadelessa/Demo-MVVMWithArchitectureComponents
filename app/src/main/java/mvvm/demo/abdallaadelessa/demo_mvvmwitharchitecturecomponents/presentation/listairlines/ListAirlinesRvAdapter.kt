@@ -1,8 +1,6 @@
 package mvvm.demo.abdallaadelessa.demo_mvvmwitharchitecturecomponents.presentation.listairlines
 
-import android.arch.lifecycle.LiveData
 import android.arch.lifecycle.ViewModel
-import android.content.Context
 import android.databinding.DataBindingUtil
 import android.databinding.ObservableField
 import android.support.v7.recyclerview.extensions.ListAdapter
@@ -37,6 +35,13 @@ class ListAirlinesRvAdapter() : ListAdapter<AirlineModel, ListAirlinesRvAdapter.
             }
         }
     }
+
+    class AirlineViewModel(val airline: AirlineModel) : ViewModel() {
+        val name = ObservableField<String>(airline.name)
+        val site = ObservableField<String>(airline.site)
+        val phone = ObservableField<String>(airline.phone)
+        val imageUrl = ObservableField<String>(airline.logoURL)
+    }
 }
 
 class AirlineDiffCallback : DiffUtil.ItemCallback<AirlineModel>() {
@@ -44,10 +49,5 @@ class AirlineDiffCallback : DiffUtil.ItemCallback<AirlineModel>() {
     override fun areContentsTheSame(oldItem: AirlineModel, newItem: AirlineModel): Boolean = oldItem == newItem
 }
 
-class AirlineViewModel(val airline: AirlineModel) : ViewModel() {
-    val name = ObservableField<String>(airline.name)
-    val site = ObservableField<String>(airline.site)
-    val phone = ObservableField<String>(airline.phone)
-    val imageUrl = ObservableField<String>(airline.logoURL)
-}
+
 

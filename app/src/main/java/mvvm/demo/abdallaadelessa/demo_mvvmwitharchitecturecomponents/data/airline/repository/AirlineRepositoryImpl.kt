@@ -25,6 +25,6 @@ class AirlineRepositoryImpl(private val localDataSource : AirlineLocalDataSource
                 .onErrorReturn { DataResult.Error(DataSource.Local,it) }
                 .toObservable()
 
-        return Observable.concatArrayEager(localSource, remoteSource)
+        return Observable.concatArrayEager(localSource,remoteSource)
     }
 }

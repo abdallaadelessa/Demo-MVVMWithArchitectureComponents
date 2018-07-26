@@ -12,12 +12,6 @@ import mvvm.demo.abdallaadelessa.demo_mvvmwitharchitecturecomponents.app.applica
 import mvvm.demo.abdallaadelessa.demo_mvvmwitharchitecturecomponents.presentation.common.model.ViewState
 import mvvm.demo.abdallaadelessa.demo_mvvmwitharchitecturecomponents.R
 import javax.inject.Inject
-import android.graphics.drawable.Drawable
-import android.databinding.BindingAdapter
-import android.support.v4.widget.SwipeRefreshLayout
-import android.view.View
-import android.widget.ProgressBar
-import android.widget.TextView
 
 
 class ListAirlineViewModel @Inject constructor(application: Application,private val airlineUseCase: AirlineUseCase): AndroidViewModel(application) {

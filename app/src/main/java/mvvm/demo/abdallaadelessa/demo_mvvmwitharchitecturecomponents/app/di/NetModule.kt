@@ -1,6 +1,7 @@
 package mvvm.demo.abdallaadelessa.demo_mvvmwitharchitecturecomponents.app.di
 
 import com.google.gson.Gson
+import com.google.gson.GsonBuilder
 import dagger.Module
 import dagger.Provides
 import okhttp3.Interceptor
@@ -18,7 +19,7 @@ import timber.log.Timber
 class NetModule(val baseUrl: String) {
     @Singleton
     @Provides
-    fun provideGson(): Gson = Gson()
+    fun provideGson(): Gson = GsonBuilder().setLenient().create()
 
     @Singleton
     @Provides
@@ -26,7 +27,7 @@ class NetModule(val baseUrl: String) {
 
     @Singleton
     @Provides
-    fun provideOkhttpClient(interceptor: Interceptor): OkHttpClient = OkHttpClient.Builder().addInterceptor(interceptor).build()
+    fun provideOkhttpClient(interceptor: Interceptor): OkHttpClient = OkHttpClient.Builder().build()
 
     @Singleton
     @Provides
