@@ -20,6 +20,7 @@ import javax.inject.Singleton
 abstract class ListAirlinesModule {
     @ContributesAndroidInjector(modules = [ListAirlinesActivityModule::class])
     abstract fun listAirlinesActivity(): ListAirlinesActivity
+
     @Binds
     @IntoMap
     @ViewModelKey(ListAirlineViewModel::class)
@@ -27,16 +28,18 @@ abstract class ListAirlinesModule {
 }
 
 @Module
-class ListAirlinesActivityModule{
+class ListAirlinesActivityModule {
+    @Provides
+    fun provideListAirlinesRvAdapter(): ListAirlinesRvAdapter = ListAirlinesRvAdapter()
 }
 
 @Module
-class ListAirlineViewModelModule{
+class ListAirlineViewModelModule {
     @Singleton
     @Provides
-    fun providesAirlineRepo(localDataSource : AirlineLocalDataSource, remoteDataSource : AirlineRemoteDataSource): AirlineRepository
-            = AirlineRepositoryImpl(localDataSource,remoteDataSource)
+    fun providesAirlineRepo(localDataSource: AirlineLocalDataSource, remoteDataSource: AirlineRemoteDataSource): AirlineRepository = AirlineRepositoryImpl(localDataSource, remoteDataSource)
+
     @Singleton
     @Provides
-    fun providesAirlineUseCase(repo : AirlineRepository): AirlineUseCase = AirlineUseCaseImpl(repo)
+    fun providesAirlineUseCase(repo: AirlineRepository): AirlineUseCase = AirlineUseCaseImpl(repo)
 }

@@ -19,37 +19,37 @@ import mvvm.demo.abdallaadelessa.demo_mvvmwitharchitecturecomponents.presentatio
 import timber.log.Timber
 import javax.inject.Inject
 
-
 class ListAirlinesActivity : AppCompatActivity() {
     @Inject lateinit var viewModelFactory: ViewModelProvider.Factory
+    @Inject lateinit var adapter :ListAirlinesRvAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         AndroidInjection.inject(this);
         super.onCreate(savedInstanceState)
         val binding : ActivityListAirlinesBinding= DataBindingUtil.setContentView(this, R.layout.activity_list_airlines)
-        binding.setLifecycleOwner(this)
+
+        with(binding){
+            setLifecycleOwner(this@ListAirlinesActivity)
+        }
+
         withViewModel<ListAirlineViewModel>(viewModelFactory) {
-            binding.vm = this
+            binding.viewModel = this
         }
     }
+}
 
-    @BindingAdapter("viewErrorStateText")
-    fun viewErrorStateText(view: TextView, viewState: ViewState<List<AirlineModel>>) {
-        view.text=if(viewState is ViewState.Error ) viewState.message else ""
-    }
+@BindingAdapter("bindViewErrorState")
+fun bindViewErrorState(view: TextView, viewState: ViewState<List<AirlineModel>>?) {
+    view.visibility=if(viewState is ViewState.Error ) View.VISIBLE else View.GONE
+    view.text=if(viewState is ViewState.Error ) viewState.message else ""
+}
 
-    @BindingAdapter("viewErrorStateVisibility")
-    fun viewErrorStateVisibility(view: TextView, viewState: ViewState<List<AirlineModel>>) {
-        view.visibility=if(viewState is ViewState.Error ) View.VISIBLE else View.GONE
-    }
+@BindingAdapter("bindViewLoadingState")
+fun bindViewLoadingState(view: ProgressBar, viewState: ViewState<List<AirlineModel>>?) {
+    view.visibility=if(viewState is ViewState.Loading ) View.VISIBLE else View.GONE
+}
 
-    @BindingAdapter("viewLoadingStateVisibility")
-    fun viewLoadingStateVisibility(view: ProgressBar, viewState: ViewState<List<AirlineModel>>) {
-        view.visibility=if(viewState is ViewState.Loading ) View.VISIBLE else View.GONE
-    }
-
-    @BindingAdapter("viewSuccessStateVisibility")
-    fun viewSuccessStateVisibility(view: SwipeRefreshLayout, viewState: ViewState<List<AirlineModel>>) {
-        view.visibility=if(viewState is ViewState.Success ) View.VISIBLE else View.GONE
-    }
+@BindingAdapter("bindViewSuccessState")
+fun bindViewSuccessState(view: SwipeRefreshLayout, viewState: ViewState<List<AirlineModel>>?) {
+    view.visibility=if(viewState is ViewState.Success ) View.VISIBLE else View.GONE
 }

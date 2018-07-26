@@ -2,7 +2,7 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <data>
-        <variable name="vm" type="mvvm.demo.abdallaadelessa.demo_mvvmwitharchitecturecomponents.presentation.listairlines.ListAirlineViewModel" />
+        <variable name="viewModel" type="mvvm.demo.abdallaadelessa.demo_mvvmwitharchitecturecomponents.presentation.listairlines.ListAirlineViewModel" />
     </data>
     <FrameLayout
         android:layout_width="match_parent"
@@ -10,23 +10,21 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_gravity="center"
-            app:viewErrorStateText="@{vm.viewStatus}"
-            app:viewErrorStateVisibility="@{vm.viewStatus}"
-            android:text="@{vm.viewStatus}"
+            app:bindViewErrorState="@{viewModel.viewStatus}"
             android:textAppearance="@style/TextAppearance.AppCompat.Body1"
             android:layout_height="wrap_content" />
         <ProgressBar
             style="@android:style/Widget.ProgressBar.Small"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:viewLoadingStateVisibility="@{vm.viewStatus}"
+            app:bindViewLoadingState="@{viewModel.viewStatus}"
             android:layout_gravity="center"
             android:indeterminate="true" />
         <android.support.v4.widget.SwipeRefreshLayout
             android:id="@+id/vgRefreshLayout"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            app:viewSuccessStateVisibility="@{vm.viewStatus}"
+            app:bindViewSuccessState="@{viewModel.viewStatus}"
             android:layout_gravity="center">
             <android.support.v7.widget.RecyclerView
                 android:id="@+id/rvList"
